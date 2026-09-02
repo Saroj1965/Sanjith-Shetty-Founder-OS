@@ -1,0 +1,2979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SANJITH SHETTY – FOUNDER OS | Founder Command Centre</title>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Stylesheet -->
+  <style>
+/* SANJITH SHETTY - FOUNDER OS - PREMIUM EXECUTIVE STYLESHEET */
+
+:root {
+  /* DARK THEME (DEFAULT) */
+  --bg-app: #090d16;
+  --bg-sidebar: #060911;
+  --bg-header: rgba(9, 13, 22, 0.85);
+  --bg-card: #101726;
+  --bg-card-hover: #151f33;
+  --bg-surface: #182238;
+  --bg-input: #131c2e;
+
+  --border: #1e293b;
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(99, 102, 241, 0.35);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-white: #ffffff;
+
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-glow: rgba(99, 102, 241, 0.25);
+
+  --accent-miror: #ec4899;
+  --accent-miror-glow: rgba(236, 72, 153, 0.25);
+  --accent-gold: #f59e0b;
+  
+  --success: #10b981;
+  --success-bg: rgba(16, 185, 129, 0.12);
+  --warning: #f59e0b;
+  --warning-bg: rgba(245, 158, 11, 0.12);
+  --danger: #ef4444;
+  --danger-bg: rgba(239, 68, 68, 0.12);
+  --info: #3b82f6;
+  --info-bg: rgba(59, 130, 246, 0.12);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 14px -1px rgba(0, 0, 0, 0.35), 0 2px 6px -1px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.15);
+  --shadow-premium: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+}
+
+/* LIGHT THEME OVERRIDE */
+body.light-theme {
+  --bg-app: #f4f6fa;
+  --bg-sidebar: #ffffff;
+  --bg-header: rgba(255, 255, 255, 0.9);
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --bg-surface: #f1f5f9;
+  --bg-input: #f8fafc;
+
+  --border: #e2e8f0;
+  --border-light: rgba(0, 0, 0, 0.06);
+  --border-highlight: rgba(99, 102, 241, 0.4);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-white: #ffffff;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.08);
+}
+
+/* BASE RESETS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.5;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 280px;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-section {
+  padding: 24px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.founder-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.brand-titles h1 {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.brand-titles p {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.nav-menu {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 14px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.nav-header {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-muted);
+  padding: 14px 14px 6px 14px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  transform: translateX(2px);
+}
+
+.nav-link.active {
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.18) 0%, rgba(99, 102, 241, 0.05) 100%);
+  color: var(--primary-light);
+  border-left: 3px solid var(--primary);
+  font-weight: 700;
+}
+
+.nav-link i {
+  width: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.nav-badge {
+  margin-left: auto;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  font-size: 10.5px;
+  font-weight: 700;
+  background-color: var(--danger);
+  color: white;
+}
+
+.nav-badge-miror {
+  background-color: var(--accent-miror);
+}
+
+.sidebar-footer {
+  padding: 18px 20px;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--success);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* MAIN WRAPPER */
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+/* TOP HEADER */
+.top-header {
+  background: var(--bg-header);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.header-left h2 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: var(--text-primary);
+}
+
+.header-left p {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.3);
+}
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.btn-miror {
+  background: linear-gradient(135deg, #ec4899, #db2777);
+  color: white;
+  box-shadow: 0 2px 10px rgba(236, 72, 153, 0.3);
+}
+.btn-miror:hover {
+  background: linear-gradient(135deg, #f472b6, #ec4899);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: var(--bg-card);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+.btn-outline:hover {
+  background-color: var(--bg-surface);
+  border-color: var(--text-muted);
+}
+
+.theme-toggle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.theme-toggle-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-surface);
+}
+
+/* CONTENT CONTAINER */
+.content-body {
+  padding: 28px 32px 60px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dashboard-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  scroll-margin-top: 90px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title i {
+  color: var(--primary);
+  font-size: 17px;
+}
+
+.section-title.miror-title i {
+  color: var(--accent-miror);
+}
+
+.section-subtitle {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+/* CARDS */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* MORNING BRIEFING BANNER */
+.morning-hero {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(236, 72, 153, 0.08) 100%);
+  border: 1px solid var(--border-highlight);
+  border-radius: var(--radius-lg);
+  padding: 26px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.morning-hero::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-greet h1 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-greet p {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  max-width: 850px;
+  line-height: 1.5;
+}
+
+.hero-stats-badge {
+  background: var(--bg-card);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hero-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.hero-time {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+/* VITALS GRID */
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+}
+
+.vital-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.vital-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.vital-card.green::before { background: var(--success); }
+.vital-card.amber::before { background: var(--warning); }
+.vital-card.red::before { background: var(--danger); }
+
+.vital-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vital-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vital-state-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.vital-state-dot.green { background-color: var(--success); }
+.vital-state-dot.amber { background-color: var(--warning); }
+.vital-state-dot.red { background-color: var(--danger); }
+
+.vital-value {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.vital-sub {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* PRIORITY 3 LARGE CARDS */
+.priorities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.priority-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  position: relative;
+  transition: all 0.2s;
+  cursor: grab;
+}
+
+.priority-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-highlight);
+  box-shadow: var(--shadow-card);
+}
+
+.prio-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prio-badge {
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+}
+.prio-badge.miror { background: rgba(236, 72, 153, 0.15); color: #f472b6; }
+.prio-badge.shetty { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+.prio-badge.portfolio { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+.prio-importance {
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.prio-importance.critical { color: var(--danger); }
+.prio-importance.high { color: var(--warning); }
+.prio-importance.medium { color: var(--info); }
+
+.prio-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.prio-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.prio-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+.icon-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-surface);
+}
+
+/* GRID LAYOUTS */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-7-5 {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 20px;
+}
+
+.grid-8-4 {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 20px;
+}
+
+/* FUNNEL STEP LIST */
+.funnel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.funnel-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.funnel-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(236, 72, 153, 0.15), rgba(99, 102, 241, 0.1));
+  z-index: 1;
+}
+
+.funnel-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 12.5px;
+}
+
+.funnel-stage-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.funnel-stage-data {
+  display: flex;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+/* KANBAN BOARD FOR TASKS */
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.kanban-col {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 420px;
+}
+
+.kanban-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.kanban-count {
+  background: var(--bg-card);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.kanban-cards-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.task-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.task-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.task-card.dragging {
+  opacity: 0.4;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-muted);
+  padding-top: 6px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* TABLES */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  text-align: left;
+}
+
+.custom-table th {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.custom-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.custom-table tr:hover td {
+  background-color: var(--bg-surface);
+}
+
+/* STATUS BADGES */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+}
+.badge-green { background: var(--success-bg); color: var(--success); }
+.badge-amber { background: var(--warning-bg); color: var(--warning); }
+.badge-red { background: var(--danger-bg); color: var(--danger); }
+.badge-blue { background: var(--info-bg); color: var(--info); }
+
+/* DECISION CARDS */
+.decision-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.decision-card.critical {
+  border-left: 4px solid var(--danger);
+}
+.decision-card.high {
+  border-left: 4px solid var(--warning);
+}
+
+/* MODAL */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  width: 90%;
+  max-width: 650px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-premium);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 14px;
+}
+
+.modal-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.form-control {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+  font-family: var(--font-sans);
+}
+.form-control:focus {
+  border-color: var(--primary);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .priorities-grid, .grid-3 { grid-template-columns: 1fr; }
+  .grid-2, .grid-7-5, .grid-8-4 { grid-template-columns: 1fr; }
+  .kanban-board { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: relative; }
+  .content-body { padding: 16px; }
+  .kanban-board { grid-template-columns: 1fr; }
+  .top-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- LEFT NAVIGATION BAR -->
+  <aside class="sidebar">
+    <div class="brand-section">
+      <div class="founder-avatar">SS</div>
+      <div class="brand-titles">
+        <h1>SANJITH SHETTY</h1>
+        <p>Founder OS • 2026</p>
+      </div>
+    </div>
+
+    <ul class="nav-menu">
+      <li class="nav-header">Command Center</li>
+      <li>
+        <a class="nav-link active" onclick="navigateSection(event, 'sec-home')">
+          <i class="fa-solid fa-house"></i>
+          <span>Executive Home</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-miror')">
+          <i class="fa-solid fa-heart-pulse" style="color: var(--accent-miror);"></i>
+          <span>Miror Health</span>
+          <span class="nav-badge nav-badge-miror">D2C</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-ventures')">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Venture Portfolio</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-priorities')">
+          <i class="fa-solid fa-bullseye"></i>
+          <span>Today's Priorities</span>
+          <span class="nav-badge">3</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-decisions')">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <span>Decision Tracker</span>
+          <span class="nav-badge">2</span>
+        </a>
+      </li>
+
+      <li class="nav-header">Execution & Operations</li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-meetings')">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Meetings & Schedule</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-tasks')">
+          <i class="fa-solid fa-list-check"></i>
+          <span>Kanban Tasks</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-finance')">
+          <i class="fa-solid fa-vault"></i>
+          <span>Financial Command</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-growth')">
+          <i class="fa-solid fa-arrow-trend-up"></i>
+          <span>Sales & Growth</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-people')">
+          <i class="fa-solid fa-users-gear"></i>
+          <span>People & Talent</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-brand')">
+          <i class="fa-solid fa-bullhorn"></i>
+          <span>Brand & PR</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-projects')">
+          <i class="fa-solid fa-rocket"></i>
+          <span>Major Initiatives</span>
+        </a>
+      </li>
+
+      <li class="nav-header">Governance & Review</li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-risks')">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Risks & Bottlenecks</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-network')">
+          <i class="fa-solid fa-handshake"></i>
+          <span>Network & Relations</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-personal')">
+          <i class="fa-solid fa-brain"></i>
+          <span>Founder Time & Deep Work</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" onclick="navigateSection(event, 'sec-weekly')">
+          <i class="fa-solid fa-newspaper"></i>
+          <span>Weekly CEO Review</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="system-status">
+        <span class="pulse-dot"></span>
+        <span>Founder Engine Live</span>
+      </div>
+      <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Theme">
+        <i id="themeToggleIcon" class="fa-solid fa-sun"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN APPLICATION WRAPPER -->
+  <div class="main-wrapper">
+    
+    <!-- TOP HEADER -->
+    <header class="top-header">
+      <div class="header-left">
+        <h2>FOUNDER COMMAND CENTRE</h2>
+        <p>"Clarity. Focus. Decisions. Execution."</p>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-outline" onclick="openAddTaskModal()">
+          <i class="fa-solid fa-plus"></i> Quick Task
+        </button>
+        <button class="btn btn-miror" onclick="openAddPriorityModal()">
+          <i class="fa-solid fa-bolt"></i> + Priority
+        </button>
+        <button class="btn btn-primary" onclick="openAddVentureModal()">
+          <i class="fa-solid fa-briefcase"></i> + Venture
+        </button>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="content-body">
+
+      <!-- SECTION 1: EXECUTIVE HOME - MORNING SNAPSHOT -->
+      <section id="sec-home" class="dashboard-section">
+        
+        <!-- Morning Hero Banner -->
+        <div class="morning-hero">
+          <div class="hero-greet">
+            <h1>Good Morning, Sanjith <i class="fa-solid fa-sun" style="color: var(--accent-gold); font-size: 20px;"></i></h1>
+            <p><strong>Your Morning Briefing:</strong> There are 3 critical items requiring your attention today. Miror month-on-month revenue hit +28.4%, but Series A covenants and Infosys 5,000-seat B2B agreements are awaiting your sign-off before 4:00 PM.</p>
+          </div>
+          <div class="hero-stats-badge">
+            <span class="hero-date">Wednesday, Sep 2, 2026</span>
+            <span class="hero-time" id="liveClockDisplay">08:00 AM IST</span>
+          </div>
+        </div>
+
+        <!-- Founder Vital Signs (7 Indicators) -->
+        <div>
+          <div class="section-head" style="margin-bottom: 12px;">
+            <h3 class="section-title"><i class="fa-solid fa-heart-pulse"></i> Founder Vital Signs</h3>
+            <span style="font-size: 11.5px; color: var(--text-muted);">Real-Time Operational Pulse</span>
+          </div>
+          <div class="vitals-grid" id="vitalsContainer">
+            <!-- Dynamically populated from data.js -->
+          </div>
+        </div>
+
+        <!-- Today's Top 3 Priorities -->
+        <div id="sec-priorities">
+          <div class="section-head" style="margin-bottom: 12px;">
+            <div>
+              <h3 class="section-title"><i class="fa-solid fa-bullseye"></i> Today's Top 3 Focus Priorities</h3>
+              <p class="section-subtitle">What requires the founder's direct energy and sign-off today</p>
+            </div>
+            <button class="btn btn-outline" style="font-size: 11.5px;" onclick="openAddPriorityModal()">
+              <i class="fa-solid fa-plus"></i> Add Priority
+            </button>
+          </div>
+          <div class="priorities-grid" id="prioritiesContainer">
+            <!-- Dynamically populated from data.js -->
+          </div>
+        </div>
+
+      </section>
+
+      <!-- SECTION 2: MIROR HEALTH BUSINESS DASHBOARD -->
+      <section id="sec-miror" class="dashboard-section">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title miror-title"><i class="fa-solid fa-heart-pulse"></i> MIROR – Menopause & Women's Longevity Health</h3>
+            <p class="section-subtitle">D2C Performance, Clinical Protocols, Customer Funnel & Enterprise Wellness</p>
+          </div>
+          <span class="badge badge-green" style="font-size: 12px; padding: 4px 12px;">Series A Due Diligence Active</span>
+        </div>
+
+        <!-- Miror Key Metrics Cards -->
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title"><i class="fa-solid fa-indian-rupee-sign"></i> Monthly Revenue</span>
+              <span class="badge badge-green">+28.4% MoM</span>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 28px; font-weight: 700; color: var(--text-primary);">₹68.4 Lakhs</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Target: ₹1 Cr / mo by Q4 2026</div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title"><i class="fa-solid fa-users"></i> Active Subscribers</span>
+              <span class="badge badge-green">86.4% Retention</span>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 28px; font-weight: 700; color: var(--accent-miror);">14,820</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">+2,460 New Members this month</div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title"><i class="fa-solid fa-star"></i> Clinical NPS & CSAT</span>
+              <span class="badge badge-blue">NPS +74</span>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 28px; font-weight: 700; color: var(--text-primary);">4.8 <span style="font-size: 16px; color: var(--text-muted);">/ 5.0</span></div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Based on 3,420 Verified Patient Reviews</div>
+          </div>
+        </div>
+
+        <!-- Funnel & Marketing Chart -->
+        <div class="grid-2">
+          <!-- Miror Funnel -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title"><i class="fa-solid fa-filter"></i> Patient Acquisition & Care Funnel</span>
+              <span style="font-size: 11.5px; color: var(--text-muted);">From Awareness to Care Plans</span>
+            </div>
+            <div class="funnel-list" id="mirorFunnelContainer">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Miror Revenue Trend Chart -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title"><i class="fa-solid fa-chart-line"></i> Revenue Trend (₹ Lakhs)</span>
+              <span style="font-size: 11.5px; color: var(--text-muted);">Last 6 Months</span>
+            </div>
+            <div style="position: relative; height: 260px;">
+              <canvas id="mirorRevenueChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Miror Strategic Initiatives Tracker -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title"><i class="fa-solid fa-list-check"></i> Miror Strategic Initiatives & Clinical Milestones</span>
+            <span style="font-size: 11.5px; color: var(--text-muted);">4 Active Workstreams</span>
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Initiative</th>
+                  <th>Owner</th>
+                  <th>Status</th>
+                  <th>Progress</th>
+                  <th>Deadline</th>
+                  <th>Risk</th>
+                </tr>
+              </thead>
+              <tbody id="mirorInitiativesBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: MULTIPLE BUSINESS / VENTURE PORTFOLIO -->
+      <section id="sec-ventures" class="dashboard-section">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title"><i class="fa-solid fa-layer-group"></i> Venture & Company Portfolio</h3>
+            <p class="section-subtitle">Multi-business oversight, health scores, risk monitoring and growth metrics</p>
+          </div>
+          <button class="btn btn-primary" onclick="openAddVentureModal()">
+            <i class="fa-solid fa-plus"></i> Add New Venture
+          </button>
+        </div>
+
+        <div class="grid-3" id="venturesContainer">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </section>
+
+      <!-- SECTION 4: DECISION TRACKER -->
+      <section id="sec-decisions" class="dashboard-section">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title"><i class="fa-solid fa-scale-balanced"></i> Decisions Requiring Founder Attention</h3>
+            <p class="section-subtitle">Critical bottlenecks awaiting founder approval, capital allocation or delegation</p>
+          </div>
+          <span class="badge badge-red">2 High-Impact Pending Today</span>
+        </div>
+
+        <div class="grid-2" id="decisionsContainer">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </section>
+
+      <!-- SECTION 5: MEETINGS & CALENDAR COMMAND CENTRE -->
+      <section id="sec-meetings" class="dashboard-section">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title"><i class="fa-solid fa-calendar-day"></i> Today's Schedule & Executive Calendar</h3>
+            <p class="section-subtitle">High-impact sessions, investor meetings, 1-on-1s and council commitments</p>
+          </div>
+          <span class="badge badge-blue">5 Sessions Scheduled</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;" id="meetingsContainer">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </section>
+
+      <!-- SECTION 6: KANBAN TASKS & DELEGATION -->
+      <section id="sec-tasks" class="dashboard-section">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title"><i class="fa-solid fa-list-check"></i> Founder Task Engine (Kanban)</h3>
+            <p class="section-subtitle">Drag and drop tasks across columns to reorganize work in real-time</p>
+          </div>
+          <button class="btn btn-outline" onclick="openAddTaskModal()">
+            <i class="fa-solid fa-plus"></i> Add Task
+          </button>
+        </div>
+
+        <div class="kanban-board">
+          <!-- Column 1: To Do -->
+          <div class="kanban-col" ondrop="handleKanbanDrop(event, 'todo')" ondragover="handleKanbanDragOver(event)">
+            <div class="kanban-header">
+              <span><i class="fa-regular fa-circle"></i> TO DO</span>
+              <span class="kanban-count" id="count-todo">0</span>
+            </div>
+            <div class="kanban-cards-area" id="kanban-todo"></div>
+          </div>
+
+          <!-- Column 2: In Progress -->
+          <div class="kanban-col" ondrop="handleKanbanDrop(event, 'in-progress')" ondragover="handleKanbanDragOver(event)">
+            <div class="kanban-header">
+              <span><i class="fa-solid fa-spinner" style="color: var(--primary);"></i> IN PROGRESS</span>
+              <span class="kanban-count" id="count-in-progress">0</span>
+            </div>
+            <div class="kanban-cards-area" id="kanban-in-progress"></div>
+          </div>
+
+          <!-- Column 3: Waiting / Delegated -->
+          <div class="kanban-col" ondrop="handleKanbanDrop(event, 'waiting')" ondragover="handleKanbanDragOver(event)">
+            <div class="kanban-header">
+              <span><i class="fa-regular fa-clock" style="color: var(--warning);"></i> WAITING</span>
+              <span class="kanban-count" id="count-waiting">0</span>
+            </div>
+            <div class="kanban-cards-area" id="kanban-waiting"></div>
+          </div>
+
+          <!-- Column 4: Completed -->
+          <div class="kanban-col" ondrop="handleKanbanDrop(event, 'completed')" ondragover="handleKanbanDragOver(event)">
+            <div class="kanban-header">
+              <span><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> COMPLETED</span>
+              <span class="kanban-count" id="count-completed">0</span>
+            </div>
+            <div class="kanban-cards-area" id="kanban-completed"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 7: FINANCIAL & SALES COMMAND -->
+      <section id="sec-finance" class="dashboard-section">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title"><i class="fa-solid fa-vault"></i> Financial Command & Cash Runway</h3>
+            <p class="section-subtitle">Portfolio revenue run-rate, monthly burn, runway projections and upcoming cash outflows</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <!-- Finance Trend Chart -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title"><i class="fa-solid fa-chart-column"></i> Monthly Revenue vs Burn Rate (₹ Lakhs)</span>
+              <span style="font-size: 11.5px; color: var(--text-muted);">18.5 Months Runway</span>
+            </div>
+            <div style="position: relative; height: 260px;">
+              <canvas id="financeTrendChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Major Upcoming Payments -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title"><i class="fa-solid fa-receipt"></i> Major Upcoming Outflows & Payables</span>
+              <span style="font-size: 11.5px; color: var(--text-muted);">Next 30 Days</span>
+            </div>
+            <div class="table-responsive">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>Payable Item</th>
+                    <th>Amount</th>
+                    <th>Due Date</th>
+                  </tr>
+                </thead>
+                <tbody id="upcomingPaymentsBody">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sales & Growth Pipeline -->
+        <div id="sec-growth" class="card" style="margin-top: 10px;">
+          <div class="card-header">
+            <span class="card-title"><i class="fa-solid fa-funnel-dollar"></i> B2B Enterprise & Institutional Sales Pipeline</span>
+            <span class="badge badge-green">₹3.85 Cr Pipeline Value</span>
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Pipeline Stage</th>
+                  <th>Deals in Stage</th>
+                  <th>Stage Value</th>
+                </tr>
+              </thead>
+              <tbody id="salesPipelineBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: PEOPLE, TALENT & BRAND MARKETING -->
+      <section id="sec-people" class="dashboard-section">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title"><i class="fa-solid fa-users-gear"></i> People, Leadership & Talent Health</h3>
+            <p class="section-subtitle">Key employee retention, critical talent discussions, and open leadership searches</p>
+          </div>
+          <span class="badge badge-amber">48 Team Members • 4 Open Searches</span>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title"><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i> Immediate People Discussions Required</span>
+            <span style="font-size: 11.5px; color: var(--text-muted);">Founder 1-on-1s</span>
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Team Member</th>
+                  <th>Company</th>
+                  <th>Key Issue / Context</th>
+                  <th>Action Required</th>
+                </tr>
+              </thead>
+              <tbody id="peopleAttentionBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Brand & Content Calendar -->
+        <div id="sec-brand" class="card" style="margin-top: 10px;">
+          <div class="card-header">
+            <span class="card-title"><i class="fa-solid fa-bullhorn"></i> Founder Brand & Thought Leadership Calendar</span>
+            <span style="font-size: 11.5px; color: var(--text-muted);">LinkedIn, PR & Keynote Schedule</span>
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Platform</th>
+                  <th>Content / Keynote Topic</th>
+                  <th>Status</th>
+                  <th>Owner</th>
+                </tr>
+              </thead>
+              <tbody id="contentCalendarBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 9: MAJOR INITIATIVES & STRATEGIC RISKS -->
+      <section id="sec-projects" class="dashboard-section">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title"><i class="fa-solid fa-rocket"></i> Major Strategic Initiatives Portfolio</h3>
+            <p class="section-subtitle">Cross-venture progress tracking, capital deployment and risk mitigation</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Initiative</th>
+                  <th>Company</th>
+                  <th>Owner</th>
+                  <th>Progress</th>
+                  <th>Budget / Target</th>
+                  <th>Status</th>
+                  <th>Risk</th>
+                </tr>
+              </thead>
+              <tbody id="allProjectsBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Risks & Bottlenecks -->
+        <div id="sec-risks" style="margin-top: 10px;">
+          <div class="section-head" style="margin-bottom: 12px;">
+            <h3 class="section-title"><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i> Founder Attention Required (Active Bottlenecks)</h3>
+            <span class="badge badge-red">3 Critical Escalations</span>
+          </div>
+          <div id="risksListContainer">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 10: NETWORK & RELATIONSHIPS -->
+      <section id="sec-network" class="dashboard-section">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title"><i class="fa-solid fa-handshake"></i> Network & Key Stakeholder Relationships</h3>
+            <p class="section-subtitle">Investors, board advisors, key enterprise partners and ecosystem leaders</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Contact Name</th>
+                  <th>Organisation</th>
+                  <th>Category</th>
+                  <th>Last Sync</th>
+                  <th>Next Follow-up</th>
+                  <th>Status</th>
+                  <th>Key Notes</th>
+                </tr>
+              </thead>
+              <tbody id="relationshipsBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 11: PERSONAL FOUNDER PERFORMANCE & DEEP WORK -->
+      <section id="sec-personal" class="dashboard-section">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title"><i class="fa-solid fa-brain"></i> Personal Founder Performance & Time Energy</h3>
+            <p class="section-subtitle">Where is Sanjith's cognitive focus going this week?</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <!-- Time Allocation Chart -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title"><i class="fa-solid fa-pie-chart"></i> Time Allocation Breakdown</span>
+              <span style="font-size: 11.5px; color: var(--text-muted);">Weekly Distribution</span>
+            </div>
+            <div style="position: relative; height: 260px;">
+              <canvas id="founderTimeChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Deep Work Stats -->
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-around;">
+            <div class="card-header">
+              <span class="card-title"><i class="fa-solid fa-bolt"></i> Focus & Workload Indicators</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div style="background: var(--bg-surface); padding: 14px; border-radius: 8px;">
+                <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Meeting Load</div>
+                <div id="personalMtgs" style="font-family: var(--font-mono); font-size: 24px; font-weight: 700; color: var(--danger);">26.5 hrs</div>
+                <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">Over recommended target (20h)</div>
+              </div>
+              <div style="background: var(--bg-surface); padding: 14px; border-radius: 8px;">
+                <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Deep Work Blocks</div>
+                <div id="personalDeep" style="font-family: var(--font-mono); font-size: 24px; font-weight: 700; color: var(--success);">14.0 hrs</div>
+                <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">Strategy, Hiring & Clinical</div>
+              </div>
+              <div style="background: var(--bg-surface); padding: 14px; border-radius: 8px;">
+                <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Strategic vs Ops</div>
+                <div id="personalStrat" style="font-family: var(--font-mono); font-size: 24px; font-weight: 700; color: var(--primary-light);">55%</div>
+                <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">Target: &gt;60% Strategic</div>
+              </div>
+              <div style="background: var(--bg-surface); padding: 14px; border-radius: 8px;">
+                <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Operational Work</div>
+                <div id="personalOper" style="font-family: var(--font-mono); font-size: 24px; font-weight: 700; color: var(--warning);">30%</div>
+                <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">Delegation underway</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 12: WEEKLY CEO REVIEW -->
+      <section id="sec-weekly" class="dashboard-section">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title"><i class="fa-solid fa-newspaper"></i> Weekly CEO Synthesis & Self-Audit</h3>
+            <p class="section-subtitle">Reflect, capture major breakthroughs, and set next week's non-negotiables</p>
+          </div>
+          <button class="btn btn-primary" onclick="saveWeeklyReview()">
+            <i class="fa-solid fa-floppy-disk"></i> Save Weekly Review
+          </button>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="form-group">
+              <label><i class="fa-solid fa-trophy" style="color: var(--success);"></i> What Went Well & Major Wins</label>
+              <textarea id="reviewWins" class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="form-group">
+              <label><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i> Challenges & Bottlenecks</label>
+              <textarea id="reviewChallenges" class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="form-group">
+              <label><i class="fa-solid fa-gavel" style="color: var(--primary-light);"></i> Important Decisions Executed</label>
+              <textarea id="reviewDecisions" class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="form-group">
+              <label><i class="fa-solid fa-bullseye" style="color: var(--accent-gold);"></i> Non-Negotiable Priorities For Next Week</label>
+              <textarea id="reviewNextPriorities" class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODALS -->
+
+  <!-- 1. Add Priority Modal -->
+  <div class="modal-backdrop" id="addPriorityModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">+ Add Today's Priority</h3>
+        <button class="modal-close" onclick="closeAddPriorityModal()">&times;</button>
+      </div>
+      <form id="priorityForm" onsubmit="saveNewPriority(event)">
+        <div class="form-group">
+          <label>Priority Title</label>
+          <input type="text" id="prioTitleInput" class="form-control" placeholder="e.g. Sign Series A definitive agreement" required />
+        </div>
+        <div class="grid-2" style="margin-top: 10px;">
+          <div class="form-group">
+            <label>Associated Business</label>
+            <select id="prioCompanyInput" class="form-control">
+              <option value="Miror">Miror Health</option>
+              <option value="Miror B2B">Miror B2B Enterprise</option>
+              <option value="Shetty Capital">Shetty Capital</option>
+              <option value="Portfolio">Portfolio Assets</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Deadline</label>
+            <input type="text" id="prioDeadlineInput" class="form-control" placeholder="e.g. Today, 4:00 PM" required />
+          </div>
+        </div>
+        <div class="form-group" style="margin-top: 10px;">
+          <label>Importance Level</label>
+          <select id="prioImportanceInput" class="form-control">
+            <option value="Critical">Critical</option>
+            <option value="High" selected>High</option>
+            <option value="Medium">Medium</option>
+          </select>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px;">
+          <button type="button" class="btn btn-outline" onclick="closeAddPriorityModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Priority</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Add Venture Modal -->
+  <div class="modal-backdrop" id="addVentureModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">+ Add Venture / Company</h3>
+        <button class="modal-close" onclick="closeAddVentureModal()">&times;</button>
+      </div>
+      <form id="ventureForm" onsubmit="saveNewVenture(event)">
+        <div class="form-group">
+          <label>Venture Name</label>
+          <input type="text" id="ventNameInput" class="form-control" placeholder="e.g. HealthTech AI Labs" required />
+        </div>
+        <div class="form-group" style="margin-top: 10px;">
+          <label>Category / Industry</label>
+          <input type="text" id="ventCategoryInput" class="form-control" placeholder="e.g. AI Diagnostics" required />
+        </div>
+        <div class="grid-2" style="margin-top: 10px;">
+          <div class="form-group">
+            <label>Monthly Revenue</label>
+            <input type="text" id="ventRevenueInput" class="form-control" placeholder="e.g. ₹15.0L / mo" />
+          </div>
+          <div class="form-group">
+            <label>Key Priority</label>
+            <input type="text" id="ventPriorityInput" class="form-control" placeholder="e.g. Product Launch" />
+          </div>
+        </div>
+        <div class="form-group" style="margin-top: 10px;">
+          <label>Major Risk</label>
+          <input type="text" id="ventRiskInput" class="form-control" placeholder="e.g. Hiring lead engineer" />
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px;">
+          <button type="button" class="btn btn-outline" onclick="closeAddVentureModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Add Venture</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Add Quick Task Modal -->
+  <div class="modal-backdrop" id="addTaskModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">+ Quick Add Task</h3>
+        <button class="modal-close" onclick="closeAddTaskModal()">&times;</button>
+      </div>
+      <form id="taskForm" onsubmit="saveNewTask(event)">
+        <div class="form-group">
+          <label>Task Description</label>
+          <input type="text" id="taskTitleInput" class="form-control" placeholder="e.g. Approve clinical study whitepaper" required />
+        </div>
+        <div class="grid-2" style="margin-top: 10px;">
+          <div class="form-group">
+            <label>Company</label>
+            <select id="taskCompanyInput" class="form-control">
+              <option value="Miror">Miror</option>
+              <option value="Shetty Capital">Shetty Capital</option>
+              <option value="Portfolio">Portfolio</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Priority</label>
+            <select id="taskPriorityInput" class="form-control">
+              <option value="Critical">Critical</option>
+              <option value="High" selected>High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top: 10px;">
+          <div class="form-group">
+            <label>Assignee / Owner</label>
+            <input type="text" id="taskOwnerInput" class="form-control" placeholder="Sanjith Shetty" />
+          </div>
+          <div class="form-group">
+            <label>Deadline</label>
+            <input type="text" id="taskDeadlineInput" class="form-control" placeholder="e.g. Today, 5:00 PM" />
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px;">
+          <button type="button" class="btn btn-outline" onclick="closeAddTaskModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Create Task</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Meeting Action Item Record Modal -->
+  <div class="modal-backdrop" id="meetingActionModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Record Meeting Outcomes</h3>
+        <button class="modal-close" onclick="closeMeetingActionModal()">&times;</button>
+      </div>
+      <div style="font-size: 13px; color: var(--primary-light); font-weight: 700;" id="meetingTitleContext">Meeting Name</div>
+      <form id="meetingActionForm" onsubmit="saveMeetingAction(event)">
+        <div class="form-group" style="margin-top: 10px;">
+          <label>Key Decision Reached</label>
+          <input type="text" id="meetingDecisionInput" class="form-control" placeholder="e.g. Agreed to proceed with 5K seats pilot" required />
+        </div>
+        <div class="form-group" style="margin-top: 10px;">
+          <label>Immediate Action Item Created</label>
+          <input type="text" id="meetingActionItemInput" class="form-control" placeholder="e.g. Send redlined enterprise agreement to Infosys legal" required />
+        </div>
+        <div class="grid-2" style="margin-top: 10px;">
+          <div class="form-group">
+            <label>Action Owner</label>
+            <input type="text" id="meetingOwnerInput" class="form-control" placeholder="Sanjith Shetty / Priya" />
+          </div>
+          <div class="form-group">
+            <label>Deadline</label>
+            <input type="text" id="meetingDeadlineInput" class="form-control" placeholder="Tomorrow, 2:00 PM" />
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px;">
+          <button type="button" class="btn btn-outline" onclick="closeMeetingActionModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Sync to Tasks & Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+const DEFAULT_FOUNDER_DATA = {
+  founder: {
+    name: "Sanjith Shetty",
+    title: "Founder & CEO",
+    tagline: "Clarity. Focus. Decisions. Execution.",
+    currentDate: "Wednesday, September 2, 2026",
+    briefing: {
+      headline: "Good morning, Sanjith. 3 critical items require your signature and decision today.",
+      text: "Miror's month-on-month D2C revenue is up +28.4% driven by the new Perimenopause Wellness Kit launch. However, 2 strategic decisions (Series A Term Sheet clause & Corporate Wellness pilot agreement with Infosys) are awaiting your sign-off before 4:00 PM. Your schedule includes 5 high-impact sessions, including an investor sync with Peak XV Partners at 2:30 PM."
+    },
+    vitals: {
+      businessHealth: { score: 88, status: "Healthy", trend: "+4 pts vs last month", state: "green" },
+      revenueGrowth: { score: "₹1.42 Cr / mo", status: "+24.8% YoY", trend: "On Target (94%)", state: "green" },
+      cashRunway: { score: "18.5 Months", status: "₹8.65 Cr Reserves", trend: "Burn ₹46.8L/mo", state: "green" },
+      teamHealth: { score: "84% eNPS", status: "Needs Attention", trend: "2 Tech Hires Pending", state: "amber" },
+      customerHealth: { score: "NPS +72", status: "Healthy", trend: "Retention 86.4%", state: "green" },
+      marketingBrand: { score: "CAC ₹840", status: "Healthy", trend: "ROAS 3.85x", state: "green" },
+      workload: { score: "High (8.5h mtgs)", status: "Caution", trend: "Deep Work: 2.5h", state: "amber" }
+    },
+    personalMetrics: {
+      meetingHours: 26.5,
+      deepWorkHours: 14.0,
+      strategicWorkPct: 55,
+      operationalWorkPct: 30,
+      delegatedTasksPct: 15,
+      timeAllocation: [
+        { label: "Strategic Growth & Board", pct: 35, color: "#6366f1" },
+        { label: "Product & Miror Clinical", pct: 25, color: "#ec4899" },
+        { label: "Operations & Problem Solving", pct: 20, color: "#3b82f6" },
+        { label: "People & Key Talent", pct: 12, color: "#10b981" },
+        { label: "Investor Relations & Network", pct: 8, color: "#f59e0b" }
+      ]
+    }
+  },
+
+  todayPriorities: [
+    {
+      id: "prio-1",
+      title: "Review & Sign Series A Term Sheet Covenants",
+      company: "Miror",
+      badge: "Miror",
+      deadline: "Today, 4:00 PM",
+      importance: "Critical",
+      status: "In Progress",
+      owner: "Sanjith Shetty",
+      risk: "High",
+      completed: false
+    },
+    {
+      id: "prio-2",
+      title: "Greenlight Infosys Corporate Wellness Pilot (5,000 Seats)",
+      company: "Miror B2B",
+      badge: "Miror",
+      deadline: "Today, 1:00 PM",
+      importance: "High",
+      status: "Pending Decision",
+      owner: "Sanjith + VP Enterprise",
+      risk: "Medium",
+      completed: false
+    },
+    {
+      id: "prio-3",
+      title: "Quarterly Strategy Review with Board Advisors",
+      company: "Shetty Capital",
+      badge: "Shetty Capital",
+      deadline: "Today, 5:30 PM",
+      importance: "High",
+      status: "Scheduled",
+      owner: "Sanjith Shetty",
+      risk: "Low",
+      completed: false
+    }
+  ],
+
+  miror: {
+    overview: {
+      monthlyRevenue: "₹68.4 Lakhs",
+      revenueGrowth: "+28.4%",
+      activeCustomers: "14,820",
+      newCustomersMonth: "2,460",
+      retentionRate: "86.4%",
+      conversionRate: "4.82%"
+    },
+    funnel: [
+      { stage: "Brand Awareness & Reach", count: "340,000", conv: "100%", drop: "0%" },
+      { stage: "Website & App Visitors", count: "92,500", conv: "27.2%", drop: "72.8%" },
+      { stage: "Qualified Quiz / Symptom Leads", count: "21,800", conv: "23.6%", drop: "76.4%" },
+      { stage: "Doctor & Wellness Consultations", count: "5,420", conv: "24.9%", drop: "75.1%" },
+      { stage: "Paying Subscribers & Kit Orders", count: "2,460", conv: "45.4%", drop: "54.6%" },
+      { stage: "Repeat Monthly Auto-Renewals", count: "1,890", conv: "76.8%", drop: "23.2%" }
+    ],
+    marketing: {
+      monthlyVisitors: "92.5K",
+      instagramFollowers: "128K (+14% MoM)",
+      cpl: "₹185 (Target <₹220)",
+      topChannel: "Meta Retargeting + Podcast Partnerships",
+      monthlyTrend: [
+        { month: "Apr", revenue: 42.0, spend: 12.5, leads: 14200 },
+        { month: "May", revenue: 47.5, spend: 13.8, leads: 15800 },
+        { month: "Jun", revenue: 53.0, spend: 14.2, leads: 17400 },
+        { month: "Jul", revenue: 58.2, spend: 15.0, leads: 18900 },
+        { month: "Aug", revenue: 64.0, spend: 16.5, leads: 20400 },
+        { month: "Sep (Proj)", revenue: 68.4, spend: 17.2, leads: 21800 }
+      ]
+    },
+    insights: {
+      nps: 74,
+      csat: "4.8 / 5.0",
+      topConcerns: ["Hormonal Brain Fog", "Sleep Disturbances & Night Sweats", "Weight Metabolism", "Anxiety & Mood Swings"],
+      requestedServices: ["HRT Tele-Consultations", "Custom Nutraceutical Formulations", "Workplace Menopause Sensitization"]
+    },
+    initiatives: [
+      { name: "Clinical Trial Validation for Phyto-Estrogen Blend", owner: "Dr. Deepa M. (Head of Clinical)", status: "On Track", progress: 85, deadline: "Oct 15, 2026", risk: "Low" },
+      { name: "Enterprise B2B Dashboard for HR Benefits", owner: "Rohan V. (Product Lead)", status: "In Progress", progress: 68, deadline: "Nov 01, 2026", risk: "Medium" },
+      { name: "Omnichannel Retail Launch (Apollo & Nature's Basket)", owner: "Priya S. (Retail Head)", status: "Delayed", progress: 42, deadline: "Oct 30, 2026", risk: "High" },
+      { name: "Miror Community App 2.0 (Peer Circles & Live Q&A)", owner: "Ananya K. (Community)", status: "On Track", progress: 90, deadline: "Sep 25, 2026", risk: "Low" }
+    ]
+  },
+
+  ventures: [
+    {
+      id: "v-miror",
+      name: "Miror Health",
+      category: "FemTech / Women's Longevity & Menopause",
+      role: "Founder & Managing Director",
+      healthScore: 88,
+      status: "Rapid Scaling",
+      revenue: "₹68.4L / mo",
+      growth: "+28.4% MoM",
+      keyPriority: "Series A Closing & Enterprise B2B Launch",
+      majorRisk: "Omnichannel inventory distributor delay",
+      nextMilestone: "₹1 Cr monthly revenue run-rate (Q4)",
+      badgeColor: "#ec4899",
+      icon: "fa-heart-pulse"
+    },
+    {
+      id: "v-shetty-inn",
+      name: "Shetty Capital & Venture Studio",
+      category: "HealthTech & MedTech Ecosystem",
+      role: "Strategic Board Member & Co-Founder",
+      healthScore: 82,
+      status: "Stable Growth",
+      revenue: "₹45.0L / mo",
+      growth: "+14.2% YoY",
+      keyPriority: "Deploy ₹15 Cr MedTech Innovation Fund",
+      majorRisk: "Regulatory clearance pace for 2 diagnostic startups",
+      nextMilestone: "Launch 5th Cohort of 12 MedTech Startups",
+      badgeColor: "#3b82f6",
+      icon: "fa-hospital"
+    },
+    {
+      id: "v-proptech",
+      name: "Urban Living & PropTech Assets",
+      category: "Commercial Real Estate & Co-Living",
+      role: "Principal Investor & Director",
+      healthScore: 78,
+      status: "Cash Cow",
+      revenue: "₹28.5L / mo",
+      growth: "+8.5% YoY",
+      keyPriority: "98% Occupancy on Bengaluru Central Assets",
+      majorRisk: "Municipal zoning revision on Phase 2 expansion",
+      nextMilestone: "Refinancing term debt at 7.8% interest",
+      badgeColor: "#10b981",
+      icon: "fa-building-columns"
+    }
+  ],
+
+  tasks: [
+    { id: "t-1", title: "Review final cap table with legal counsel (Cyril Amarchand)", company: "Miror", priority: "Critical", owner: "Sanjith Shetty", deadline: "Today, 4:00 PM", status: "todo", category: "TODAY" },
+    { id: "t-2", title: "Approve ₹18L Q4 Meta & Influencer marketing ad budget", company: "Miror", priority: "High", owner: "Sanjith Shetty", deadline: "Today, 6:00 PM", status: "in-progress", category: "TODAY" },
+    { id: "t-3", title: "Review Clinical Study Whitepaper with Dr. Deepa", company: "Miror", priority: "High", owner: "Dr. Deepa / Sanjith", deadline: "Tomorrow, 11:30 AM", status: "todo", category: "THIS WEEK" },
+    { id: "t-4", title: "Audit Q2 Financial Statements with KPMG Auditors", company: "Portfolio", priority: "Medium", owner: "CFO & Finance Team", deadline: "Sep 10, 2026", status: "waiting", category: "THIS WEEK" },
+    { id: "t-5", title: "Interview finalist for Head of Growth / CMO position", company: "Miror", priority: "Critical", owner: "Sanjith + HR Lead", deadline: "Sep 08, 2026", status: "in-progress", category: "THIS WEEK" },
+    { id: "t-6", title: "Draft shareholder quarterly memo for Shetty Capital Council", company: "Shetty Capital", priority: "Medium", owner: "Sanjith Shetty", deadline: "Sep 15, 2026", status: "todo", category: "THIS MONTH" },
+    { id: "t-7", title: "Vendor SLA approval for packaging manufacturing", company: "Miror", priority: "Low", owner: "Operations VP", deadline: "Sep 18, 2026", status: "completed", category: "DELEGATED" }
+  ],
+
+  meetings: [
+    {
+      id: "m-1",
+      time: "09:30 AM - 10:15 AM",
+      title: "Daily Executive Standup & Fire Drills",
+      company: "Miror Leadership",
+      participants: "Priya (COO), Rohan (Product), Dr. Deepa",
+      importance: "High",
+      type: "Operations",
+      location: "Miror HQ / Boardroom"
+    },
+    {
+      id: "m-2",
+      time: "11:00 AM - 12:00 PM",
+      title: "Infosys HR & Benefits Leadership: 5K Seat Pilot",
+      company: "Miror B2B",
+      participants: "Sanjith Shetty, VP HR Infosys, Corporate Sales",
+      importance: "Critical",
+      type: "Strategic Deal",
+      location: "Zoom Video / Hybrid"
+    },
+    {
+      id: "m-3",
+      time: "02:30 PM - 03:30 PM",
+      title: "Series A Investment Committee & Due Diligence",
+      company: "Miror / Peak XV",
+      participants: "Managing Partner (Peak XV), Sanjith, Finance Lead",
+      importance: "Critical",
+      type: "Fundraising",
+      location: "Four Seasons Bengaluru / Private Dining"
+    },
+    {
+      id: "m-4",
+      time: "04:30 PM - 05:15 PM",
+      title: "1-on-1 Mentorship & Key Talent Review",
+      company: "Miror",
+      participants: "Rohan V. (Product Lead)",
+      importance: "Medium",
+      type: "People & Team",
+      location: "Founder Office"
+    },
+    {
+      id: "m-5",
+      time: "05:30 PM - 06:30 PM",
+      title: "Shetty Capital Tech & MedTech Board Sync",
+      company: "Shetty Capital",
+      participants: "Board Members & Vice Chairman",
+      importance: "High",
+      type: "Governance",
+      location: "Executive Boardroom / UB City Hub"
+    }
+  ],
+
+  decisions: [
+    {
+      id: "dec-1",
+      title: "Approve Lead Investor Liquidation Preference & Pro-Rata Rights",
+      company: "Miror Health",
+      background: "Lead investor requests 1x non-participating liquidation preference and 15% ESOP pool expansion before Series A close.",
+      options: "Option A: Accept 1x non-participating with 12% ESOP (Recommended) | Option B: Push back to 10% ESOP",
+      financialImpact: "₹3.5 Cr Equity Dilution Buffer",
+      riskLevel: "Critical",
+      recommendedAction: "Approve 12% compromise covenant with legal counsel sign-off today.",
+      deadline: "Today, 4:00 PM",
+      status: "Pending",
+      overdue: false
+    },
+    {
+      id: "dec-2",
+      title: "Authorize B2B Corporate Wellness Enterprise Pricing Tier",
+      company: "Miror B2B",
+      background: "Infosys and Wipro require an annual per-seat subscription price of ₹1,800/employee (down from standard ₹2,400).",
+      options: "Option A: Approve discounted pricing with 2-year lock-in (Recommended) | Option B: Hold standard ₹2,400 rate",
+      financialImpact: "₹90 Lakhs Guaranteed Annual Recurring Revenue (ARR)",
+      riskLevel: "Medium",
+      recommendedAction: "Approve discounted rate on condition of 24-month upfront enterprise commitment.",
+      deadline: "Today, 1:00 PM",
+      status: "Pending",
+      overdue: false
+    },
+    {
+      id: "dec-3",
+      title: "Omnichannel Distribution Contract: Apollo Pharmacy vs Guardian",
+      company: "Miror D2C",
+      background: "Apollo offers 250 top tier metro store placements with 32% margin; Guardian offers 180 stores at 28% margin.",
+      options: "Option A: Exclusively partner with Apollo for 6 months | Option B: Dual non-exclusive launch",
+      financialImpact: "₹45 Lakhs Inventory Working Capital",
+      riskLevel: "High",
+      recommendedAction: "Execute exclusive 6-month metro pilot with Apollo for prime endcap shelf space.",
+      deadline: "Sep 05, 2026",
+      status: "Under Review",
+      overdue: false
+    }
+  ],
+
+  people: {
+    totalTeam: 48,
+    newHiresThisQuarter: 7,
+    openPositions: 4,
+    attritionRate: "4.2% (Industry benchmark 12%)",
+    teamEngagement: "88% Positive",
+    criticalAttention: [
+      { name: "Rohan V.", role: "Lead Product Designer / PM", company: "Miror", issue: "Burnout risk after 3 sprint cycles; needs Sr. UI hire to offload wireframing", action: "Conduct 1-on-1 at 4:30 PM & accelerate Sr. Product Designer offer" },
+      { name: "Head of Growth (Candidate)", role: "Ex-Cult.fit / Nykaa", company: "Miror", issue: "Competing offer in hand; requires founder closing call today", action: "Founder closing call at 6:45 PM" },
+      { name: "Clinical Content Team", role: "3 Medical Writers", company: "Miror", issue: "Content velocity blocked by medical review turnaround", action: "Retain 2 external gynaecologist advisors on retainer" }
+    ],
+    openHiring: [
+      { role: "VP of Enterprise Sales", dept: "B2B Sales", company: "Miror", priority: "Critical", applicants: 18 },
+      { role: "Sr. Full Stack Engineer (React/Node)", dept: "Engineering", company: "Miror", priority: "High", applicants: 34 },
+      { role: "Performance Marketing Manager", dept: "Growth", company: "Miror", priority: "High", applicants: 22 },
+      { role: "Clinical Research Coordinator", dept: "Medical", company: "Venture Studio", priority: "Medium", applicants: 9 }
+    ]
+  },
+
+  finance: {
+    totalPortfolioRevenue: "₹1.42 Cr / mo",
+    monthlyBurn: "₹46.8 Lakhs",
+    cashRunwayMonths: "18.5 Months",
+    totalCashReserves: "₹8.65 Cr",
+    accountsReceivable: "₹34.2 Lakhs (Avg DSO 24 days)",
+    upcomingMajorPayments: [
+      { item: "Bulk Active Ingredient Formulation (Phyto-Extracts)", amount: "₹28.5L", due: "Sep 15, 2026" },
+      { item: "Quarterly Statutory Taxes & Advance Tax", amount: "₹14.2L", due: "Sep 15, 2026" },
+      { item: "Office Lease Renewal (Bengaluru Tech Park Hub)", amount: "₹8.0L", due: "Sep 30, 2026" }
+    ],
+    monthlyTrend: [
+      { month: "Apr", rev: 110, exp: 42, net: 68 },
+      { month: "May", rev: 118, exp: 44, net: 74 },
+      { month: "Jun", rev: 125, exp: 45, net: 80 },
+      { month: "Jul", rev: 132, exp: 46, net: 86 },
+      { month: "Aug", rev: 138, exp: 46, net: 92 },
+      { month: "Sep", rev: 142, exp: 46.8, net: 95.2 }
+    ]
+  },
+
+  salesPipeline: {
+    totalPipelineValue: "₹3.85 Cr",
+    conversionRate: "22.4%",
+    closedThisQuarter: "₹1.15 Cr",
+    forecastNextQuarter: "₹2.20 Cr",
+    stages: [
+      { stage: "Lead Inbound", count: 48, valueCr: 1.45 },
+      { stage: "Discovery & Qualification", count: 26, valueCr: 0.95 },
+      { stage: "Custom Enterprise Proposal", count: 12, valueCr: 0.75 },
+      { stage: "Security & Legal Review", count: 6, valueCr: 0.45 },
+      { stage: "Verbal Agreement / Closing", count: 3, valueCr: 0.25 }
+    ]
+  },
+
+  brandMarketing: {
+    websiteTraffic: "92,500 monthly unique",
+    linkedinFollowers: "34,200 (+2,400 this month)",
+    instagramReach: "480,000 monthly impressions",
+    brandMentions: "42 Press & Health Journal features",
+    contentCalendar: [
+      { date: "Sep 03", platform: "LinkedIn / Founder Post", topic: "The Multi-Billion Dollar Workplace Taboo: Menopause in Corporate India", status: "Ready for Approval", owner: "Sanjith Shetty" },
+      { date: "Sep 05", platform: "Instagram / Video Series", topic: "Gynaecologist Mythbusting: Estrogen, Collagen & Sleep Disruptions", status: "In Production", owner: "Dr. Deepa + Studio" },
+      { date: "Sep 08", platform: "YourStory / Press Release", topic: "Miror Health Surpasses 15,000 Women on Clinically Backed Care Protocol", status: "Drafting", owner: "PR Agency" },
+      { date: "Sep 12", platform: "Podcast Feature", topic: "Longevity & Preventive Healthcare Podcast with Dr. Marcus", status: "Scheduled", owner: "Sanjith Shetty" }
+    ]
+  },
+
+  projects: [
+    { name: "Miror Series A Term Sheet & Due Diligence", company: "Miror", owner: "Sanjith Shetty", progress: 90, budget: "₹25 Cr Valuation Target", status: "In Progress", risk: "Critical" },
+    { name: "Enterprise B2B Launch for 3 Top IT Giants", company: "Miror B2B", owner: "Priya S. (COO)", progress: 65, budget: "₹1.5 Cr Target ARR", status: "In Progress", risk: "Medium" },
+    { name: "Omnichannel Modern Retail Rollout (Apollo)", company: "Miror D2C", owner: "Rohan V.", progress: 38, budget: "₹45L Working Cap", status: "Delayed / Bottleneck", risk: "High" },
+    { name: "HealthTech Accelerator Cohort 4 Deployment", company: "Shetty Capital", owner: "Incubation Lead", progress: 80, budget: "₹5 Cr Seed Tranche", status: "In Progress", risk: "Low" },
+    { name: "Founder IP & Trademark Global Filing (US/EU)", company: "Miror IP", owner: "Legal Counsel", progress: 95, budget: "₹12L Legal Cap", status: "Near Completion", risk: "Low" }
+  ],
+
+  relationships: [
+    { name: "Rajan Anandan", org: "Peak XV Partners", category: "Investor", lastInteraction: "3 days ago", nextFollowUp: "Today, 2:30 PM", status: "Active Lead", notes: "Discussing lead terms for Miror Series A" },
+    { name: "Dr. Arvind Rao", org: "Clinical Advisory Board", category: "Advisor & Partner", lastInteraction: "Yesterday", nextFollowUp: "Today, 5:30 PM", status: "Strong", notes: "Strategic alignment on clinical protocol trials" },
+    { name: "Richard Lobo", org: "Corporate HR Advisory / Ex-Infosys", category: "Strategic Partner", lastInteraction: "Aug 28, 2026", nextFollowUp: "Sep 04, 2026", status: "Warm", notes: "Structuring the enterprise corporate wellness rollout" },
+    { name: "Shradha Sharma", org: "YourStory Media", category: "Media & PR", lastInteraction: "2 weeks ago", nextFollowUp: "Sep 07, 2026", status: "Follow-up Due", notes: "Exclusive feature interview on Women Longevity Tech" },
+    { name: "Kiran Mazumdar-Shaw", org: "Biocon / Industry Leader", category: "Advisor & Mentor", lastInteraction: "1 month ago", nextFollowUp: "Overdue (>30 days)", status: "Attention Required", notes: "Bi-annual founder update memo" }
+  ],
+
+  weeklyReview: {
+    week: "Week 36 – September 2026",
+    wins: "• Miror month-on-month revenue hit all-time peak of ₹68.4 Lakhs (+28.4% growth).\n• Received Series A Term Sheet from top-tier institutional venture fund.\n• Secured verbal approval for 5,000 employee pilot with leading tech enterprise.",
+    challenges: "• Retail distribution partner delayed physical stocking in metro stores by 2 weeks due to barcode packaging compliance.\n• 2 critical senior tech positions (Engineering Lead & Fullstack) taking longer than 45 days to close.",
+    decisionsMade: "• Approved 15% ESOP pool reallocation for leadership hires.\n• Finalized formulation vendor contract for second-generation sleep & hormone balance kits.",
+    nextWeekPriorities: "1. Close and wire Series A definitive agreement.\n2. Sign Infosys 5K seat contract.\n3. Make binding offers to finalist Engineering Lead and Growth Lead."
+  }
+};
+
+</script>
+  <script>
+// SANJITH SHETTY - FOUNDER OS - INTERACTIVE APPLICATION LOGIC
+
+let appData = null;
+let charts = {};
+
+// Initialize application
+document.addEventListener('DOMContentLoaded', () => {
+  loadData();
+  initTheme();
+  renderAllSections();
+  setupEventListeners();
+});
+
+// Load Data from LocalStorage or Fallback to DEFAULT_FOUNDER_DATA
+function loadData() {
+  const saved = localStorage.getItem('SANJITH_FOUNDER_OS_DATA');
+  if (saved) {
+    try {
+      appData = JSON.parse(saved);
+    } catch (e) {
+      console.error('Error parsing stored data, using default', e);
+      appData = JSON.parse(JSON.stringify(DEFAULT_FOUNDER_DATA));
+    }
+  } else {
+    appData = JSON.parse(JSON.stringify(DEFAULT_FOUNDER_DATA));
+    saveData();
+  }
+}
+
+function saveData() {
+  localStorage.setItem('SANJITH_FOUNDER_OS_DATA', JSON.stringify(appData));
+}
+
+// Theme handling
+function initTheme() {
+  const savedTheme = localStorage.getItem('FOUNDER_OS_THEME') || 'dark';
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    updateThemeIcon(true);
+  }
+}
+
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light-theme');
+  localStorage.setItem('FOUNDER_OS_THEME', isLight ? 'light' : 'dark');
+  updateThemeIcon(isLight);
+  rebuildCharts();
+}
+
+function updateThemeIcon(isLight) {
+  const icon = document.getElementById('themeToggleIcon');
+  if (icon) {
+    icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+  }
+}
+
+// Navigation
+function navigateSection(e, sectionId) {
+  if (e) e.preventDefault();
+  document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+  if (e && e.currentTarget) e.currentTarget.classList.add('active');
+  
+  const target = document.getElementById(sectionId);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// Render All Sections
+function renderAllSections() {
+  renderVitals();
+  renderPriorities();
+  renderVentures();
+  renderKanban();
+  renderMeetings();
+  renderDecisions();
+  renderMirorSection();
+  renderPeopleSection();
+  renderFinanceSection();
+  renderGrowthSection();
+  renderBrandSection();
+  renderProjectsSection();
+  renderRisksSection();
+  renderRelationshipsSection();
+  renderPersonalSection();
+  renderWeeklyReview();
+  initCharts();
+}
+
+// 1. Vitals
+function renderVitals() {
+  const v = appData.founder.vitals;
+  const container = document.getElementById('vitalsContainer');
+  if (!container) return;
+
+  const vitalsList = [
+    { key: 'businessHealth', label: 'Business Health', icon: 'fa-heart-pulse', val: v.businessHealth.score + '/100', sub: v.businessHealth.trend, state: v.businessHealth.state },
+    { key: 'revenueGrowth', label: 'Portfolio Revenue', icon: 'fa-chart-line', val: v.revenueGrowth.score, sub: v.revenueGrowth.status, state: v.revenueGrowth.state },
+    { key: 'cashRunway', label: 'Cash & Runway', icon: 'fa-vault', val: v.cashRunway.score, sub: v.cashRunway.status, state: v.cashRunway.state },
+    { key: 'teamHealth', label: 'Team eNPS', icon: 'fa-users', val: v.teamHealth.score, sub: v.teamHealth.trend, state: v.teamHealth.state },
+    { key: 'customerHealth', label: 'Customer NPS', icon: 'fa-face-smile', val: v.customerHealth.score, sub: v.customerHealth.trend, state: v.customerHealth.state },
+    { key: 'marketingBrand', label: 'Marketing ROAS', icon: 'fa-bullhorn', val: v.marketingBrand.score, sub: v.marketingBrand.trend, state: v.marketingBrand.state },
+    { key: 'workload', label: 'Founder Workload', icon: 'fa-brain', val: v.workload.score, sub: v.workload.trend, state: v.workload.state }
+  ];
+
+  container.innerHTML = vitalsList.map(item => `
+    <div class="vital-card ${item.state}">
+      <div class="vital-head">
+        <span class="vital-label">${item.label}</span>
+        <span class="vital-state-dot ${item.state}"></span>
+      </div>
+      <div class="vital-value">${item.val}</div>
+      <div class="vital-sub">${item.sub}</div>
+    </div>
+  `).join('');
+}
+
+// 2. Priorities
+function renderPriorities() {
+  const container = document.getElementById('prioritiesContainer');
+  if (!container) return;
+
+  const prios = appData.todayPriorities;
+  container.innerHTML = prios.map((p, idx) => `
+    <div class="priority-card ${p.completed ? 'completed' : ''}" draggable="true" ondragstart="handlePrioDragStart(event, ${idx})">
+      <div class="prio-top">
+        <span class="prio-badge ${p.badge.toLowerCase()}">${p.company}</span>
+        <span class="prio-importance ${p.importance.toLowerCase()}"><i class="fa-solid fa-circle-exclamation"></i> ${p.importance} Priority</span>
+      </div>
+      <div class="prio-title" style="${p.completed ? 'text-decoration: line-through; opacity: 0.6;' : ''}">
+        ${p.title}
+      </div>
+      <div class="prio-footer">
+        <span><i class="fa-regular fa-clock"></i> ${p.deadline}</span>
+        <div class="prio-actions">
+          <button class="icon-btn" onclick="togglePriorityComplete(${idx})" title="Toggle Complete">
+            <i class="fa-solid ${p.completed ? 'fa-arrow-rotate-left' : 'fa-circle-check'}" style="${p.completed ? 'color: var(--text-muted);' : 'color: var(--success);'}"></i>
+          </button>
+          <button class="icon-btn" onclick="deletePriority(${idx})" title="Delete Priority">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function togglePriorityComplete(idx) {
+  appData.todayPriorities[idx].completed = !appData.todayPriorities[idx].completed;
+  saveData();
+  renderPriorities();
+}
+
+function deletePriority(idx) {
+  appData.todayPriorities.splice(idx, 1);
+  saveData();
+  renderPriorities();
+}
+
+function openAddPriorityModal() {
+  document.getElementById('addPriorityModal').classList.add('active');
+}
+
+function closeAddPriorityModal() {
+  document.getElementById('addPriorityModal').classList.remove('active');
+}
+
+function saveNewPriority(e) {
+  e.preventDefault();
+  const title = document.getElementById('prioTitleInput').value;
+  const company = document.getElementById('prioCompanyInput').value;
+  const deadline = document.getElementById('prioDeadlineInput').value;
+  const importance = document.getElementById('prioImportanceInput').value;
+
+  appData.todayPriorities.unshift({
+    id: 'prio-' + Date.now(),
+    title,
+    company,
+    badge: company.includes('Miror') ? 'Miror' : (company.includes('Shetty') ? 'Shetty Capital' : 'Portfolio'),
+    deadline,
+    importance,
+    status: 'Pending',
+    owner: 'Sanjith Shetty',
+    risk: 'Medium',
+    completed: false
+  });
+
+  saveData();
+  renderPriorities();
+  closeAddPriorityModal();
+  document.getElementById('priorityForm').reset();
+}
+
+// 3. Ventures
+function renderVentures() {
+  const container = document.getElementById('venturesContainer');
+  if (!container) return;
+
+  container.innerHTML = appData.ventures.map(v => `
+    <div class="card" style="border-top: 3px solid ${v.badgeColor};">
+      <div class="card-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: ${v.badgeColor}22; color: ${v.badgeColor}; display: flex; align-items: center; justify-content: center; font-size: 16px;">
+            <i class="fa-solid ${v.icon}"></i>
+          </div>
+          <div>
+            <h4 style="font-size: 15px; font-weight: 800;">${v.name}</h4>
+            <div style="font-size: 11px; color: var(--text-muted);">${v.category}</div>
+          </div>
+        </div>
+        <span class="badge badge-green">${v.healthScore}% Health</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; padding: 10px; background: var(--bg-surface); border-radius: 8px;">
+        <div>
+          <div style="font-size: 10.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Monthly Revenue</div>
+          <div style="font-family: var(--font-mono); font-size: 16px; font-weight: 700;">${v.revenue}</div>
+        </div>
+        <div>
+          <div style="font-size: 10.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Growth</div>
+          <div style="font-family: var(--font-mono); font-size: 16px; font-weight: 700; color: var(--success);">${v.growth}</div>
+        </div>
+      </div>
+
+      <div style="font-size: 12px; display: flex; flex-direction: column; gap: 6px;">
+        <div><strong style="color: var(--primary-light);">Top Priority:</strong> ${v.keyPriority}</div>
+        <div><strong style="color: var(--danger);">Major Risk:</strong> ${v.majorRisk}</div>
+        <div><strong style="color: var(--text-muted);">Next Milestone:</strong> ${v.nextMilestone}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function openAddVentureModal() {
+  document.getElementById('addVentureModal').classList.add('active');
+}
+function closeAddVentureModal() {
+  document.getElementById('addVentureModal').classList.remove('active');
+}
+function saveNewVenture(e) {
+  e.preventDefault();
+  const name = document.getElementById('ventNameInput').value;
+  const category = document.getElementById('ventCategoryInput').value;
+  const revenue = document.getElementById('ventRevenueInput').value;
+  const keyPriority = document.getElementById('ventPriorityInput').value;
+  const majorRisk = document.getElementById('ventRiskInput').value;
+
+  appData.ventures.push({
+    id: 'v-' + Date.now(),
+    name,
+    category,
+    role: 'Founder / Director',
+    healthScore: 80,
+    status: 'Active',
+    revenue: revenue || '₹10.0L / mo',
+    growth: '+10.0%',
+    keyPriority,
+    majorRisk,
+    nextMilestone: 'Scale & Operationalize',
+    badgeColor: '#6366f1',
+    icon: 'fa-briefcase'
+  });
+
+  saveData();
+  renderVentures();
+  closeAddVentureModal();
+  document.getElementById('ventureForm').reset();
+}
+
+// 4. Kanban Tasks
+function renderKanban() {
+  const cols = ['todo', 'in-progress', 'waiting', 'completed'];
+  cols.forEach(col => {
+    const area = document.getElementById(`kanban-${col}`);
+    const countSpan = document.getElementById(`count-${col}`);
+    if (!area) return;
+
+    const filtered = appData.tasks.filter(t => t.status === col);
+    if (countSpan) countSpan.textContent = filtered.length;
+
+    area.innerHTML = filtered.map(t => `
+      <div class="task-card" draggable="true" ondragstart="handleTaskDragStart(event, '${t.id}')">
+        <div class="task-header">
+          <span class="prio-badge ${t.company.toLowerCase()}">${t.company}</span>
+          <span class="badge ${t.priority === 'Critical' ? 'badge-red' : (t.priority === 'High' ? 'badge-amber' : 'badge-blue')}">${t.priority}</span>
+        </div>
+        <div class="task-title">${t.title}</div>
+        <div class="task-meta">
+          <span><i class="fa-regular fa-calendar"></i> ${t.deadline}</span>
+          <span><i class="fa-regular fa-user"></i> ${t.owner}</span>
+        </div>
+      </div>
+    `).join('');
+  });
+}
+
+let draggedTaskId = null;
+function handleTaskDragStart(e, id) {
+  draggedTaskId = id;
+  e.dataTransfer.setData('text/plain', id);
+}
+
+function handleKanbanDrop(e, targetStatus) {
+  e.preventDefault();
+  const task = appData.tasks.find(t => t.id === draggedTaskId);
+  if (task) {
+    task.status = targetStatus;
+    saveData();
+    renderKanban();
+  }
+}
+function handleKanbanDragOver(e) {
+  e.preventDefault();
+}
+
+function openAddTaskModal() {
+  document.getElementById('addTaskModal').classList.add('active');
+}
+function closeAddTaskModal() {
+  document.getElementById('addTaskModal').classList.remove('active');
+}
+function saveNewTask(e) {
+  e.preventDefault();
+  const title = document.getElementById('taskTitleInput').value;
+  const company = document.getElementById('taskCompanyInput').value;
+  const priority = document.getElementById('taskPriorityInput').value;
+  const owner = document.getElementById('taskOwnerInput').value;
+  const deadline = document.getElementById('taskDeadlineInput').value;
+
+  appData.tasks.unshift({
+    id: 't-' + Date.now(),
+    title,
+    company,
+    priority,
+    owner: owner || 'Sanjith Shetty',
+    deadline: deadline || 'This Week',
+    status: 'todo',
+    category: 'TODAY'
+  });
+
+  saveData();
+  renderKanban();
+  closeAddTaskModal();
+  document.getElementById('taskForm').reset();
+}
+
+// 5. Meetings
+function renderMeetings() {
+  const container = document.getElementById('meetingsContainer');
+  if (!container) return;
+
+  container.innerHTML = appData.meetings.map(m => `
+    <div class="card" style="padding: 16px; border-left: 3px solid ${m.importance === 'Critical' ? 'var(--danger)' : 'var(--primary)'};">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--primary-light); font-weight: 700;">${m.time}</span>
+          <h4 style="font-size: 14.5px; font-weight: 700; margin-top: 3px;">${m.title}</h4>
+          <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+            <strong>${m.company}</strong> • Participants: ${m.participants}
+          </div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">
+            <i class="fa-solid fa-location-dot"></i> ${m.location}
+          </div>
+        </div>
+        <button class="btn btn-outline" style="font-size: 11px; padding: 5px 10px;" onclick="openMeetingActionModal('${m.title}')">
+          <i class="fa-solid fa-clipboard-check"></i> Record Action
+        </button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function openMeetingActionModal(meetingTitle) {
+  document.getElementById('meetingTitleContext').textContent = meetingTitle;
+  document.getElementById('meetingActionModal').classList.add('active');
+}
+function closeMeetingActionModal() {
+  document.getElementById('meetingActionModal').classList.remove('active');
+}
+function saveMeetingAction(e) {
+  e.preventDefault();
+  const decision = document.getElementById('meetingDecisionInput').value;
+  const actionItem = document.getElementById('meetingActionItemInput').value;
+  const owner = document.getElementById('meetingOwnerInput').value;
+  const deadline = document.getElementById('meetingDeadlineInput').value;
+
+  if (actionItem) {
+    appData.tasks.unshift({
+      id: 't-' + Date.now(),
+      title: actionItem + ` (from mtg: ${decision})`,
+      company: 'Miror',
+      priority: 'High',
+      owner: owner || 'Sanjith Shetty',
+      deadline: deadline || 'In 48 Hours',
+      status: 'todo',
+      category: 'TODAY'
+    });
+    saveData();
+    renderKanban();
+  }
+
+  closeMeetingActionModal();
+  document.getElementById('meetingActionForm').reset();
+  alert('Action item recorded and synced to your Task Kanban!');
+}
+
+// 6. Decisions
+function renderDecisions() {
+  const container = document.getElementById('decisionsContainer');
+  if (!container) return;
+
+  container.innerHTML = appData.decisions.map(d => `
+    <div class="decision-card ${d.riskLevel.toLowerCase()}">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span class="prio-badge miror">${d.company}</span>
+        <span class="badge ${d.riskLevel === 'Critical' ? 'badge-red' : 'badge-amber'}">${d.riskLevel} Risk</span>
+      </div>
+      <h4 style="font-size: 15px; font-weight: 800;">${d.title}</h4>
+      <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.4;">${d.background}</p>
+      <div style="background: var(--bg-surface); padding: 10px; border-radius: 6px; font-size: 12px;">
+        <div><strong>Options:</strong> ${d.options}</div>
+        <div style="margin-top: 4px;"><strong>Impact:</strong> <span style="color: var(--success); font-weight: 700;">${d.financialImpact}</span></div>
+        <div style="margin-top: 4px;"><strong style="color: var(--primary-light);">Recommended Action:</strong> ${d.recommendedAction}</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 10px;">
+        <span style="font-size: 11.5px; color: var(--danger); font-weight: 700;"><i class="fa-regular fa-clock"></i> Deadline: ${d.deadline}</span>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-primary" style="font-size: 11px; padding: 5px 12px;" onclick="approveDecision('${d.id}')">Approve</button>
+          <button class="btn btn-outline" style="font-size: 11px; padding: 5px 12px;" onclick="delegateDecision('${d.id}')">Delegate</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function approveDecision(id) {
+  const dec = appData.decisions.find(d => d.id === id);
+  if (dec) {
+    alert(`Decision "${dec.title}" marked as Approved!`);
+    appData.decisions = appData.decisions.filter(d => d.id !== id);
+    saveData();
+    renderDecisions();
+  }
+}
+
+function delegateDecision(id) {
+  const assignee = prompt('Enter assignee name to delegate this decision to:');
+  if (assignee) {
+    alert(`Decision delegated to ${assignee}.`);
+    appData.decisions = appData.decisions.filter(d => d.id !== id);
+    saveData();
+    renderDecisions();
+  }
+}
+
+// 7. Miror Section
+function renderMirorSection() {
+  const m = appData.miror;
+  const f = document.getElementById('mirorFunnelContainer');
+  if (f) {
+    f.innerHTML = m.funnel.map(stage => `
+      <div class="funnel-row">
+        <div class="funnel-content">
+          <span class="funnel-stage-name">${stage.stage}</span>
+          <div class="funnel-stage-data">
+            <span>${stage.count}</span>
+            <span style="color: var(--accent-miror);">${stage.conv}</span>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  const initTbody = document.getElementById('mirorInitiativesBody');
+  if (initTbody) {
+    initTbody.innerHTML = m.initiatives.map(i => `
+      <tr>
+        <td><strong>${i.name}</strong></td>
+        <td>${i.owner}</td>
+        <td><span class="badge ${i.status === 'On Track' ? 'badge-green' : (i.status === 'In Progress' ? 'badge-blue' : 'badge-red')}">${i.status}</span></td>
+        <td>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="flex: 1; height: 6px; background: var(--bg-surface); border-radius: 4px; overflow: hidden;">
+              <div style="width: ${i.progress}%; height: 100%; background: var(--accent-miror);"></div>
+            </div>
+            <span>${i.progress}%</span>
+          </div>
+        </td>
+        <td>${i.deadline}</td>
+        <td><span class="badge ${i.risk === 'Low' ? 'badge-green' : (i.risk === 'Medium' ? 'badge-amber' : 'badge-red')}">${i.risk}</span></td>
+      </tr>
+    `).join('');
+  }
+}
+
+// 8. People Section
+function renderPeopleSection() {
+  const p = appData.people;
+  const attBody = document.getElementById('peopleAttentionBody');
+  if (attBody) {
+    attBody.innerHTML = p.criticalAttention.map(c => `
+      <tr>
+        <td><strong>${c.name}</strong><br><span style="font-size: 11px; color: var(--text-muted);">${c.role}</span></td>
+        <td><span class="prio-badge miror">${c.company}</span></td>
+        <td style="color: var(--danger); font-size: 12px;">${c.issue}</td>
+        <td><strong>${c.action}</strong></td>
+      </tr>
+    `).join('');
+  }
+}
+
+// 9. Finance Section
+function renderFinanceSection() {
+  const f = appData.finance;
+  const payBody = document.getElementById('upcomingPaymentsBody');
+  if (payBody) {
+    payBody.innerHTML = f.upcomingMajorPayments.map(p => `
+      <tr>
+        <td><strong>${p.item}</strong></td>
+        <td style="font-family: var(--font-mono); font-weight: 700; color: var(--danger);">${p.amount}</td>
+        <td>${p.due}</td>
+      </tr>
+    `).join('');
+  }
+}
+
+// 10. Growth Section
+function renderGrowthSection() {
+  const g = appData.salesPipeline;
+  const pipeBody = document.getElementById('salesPipelineBody');
+  if (pipeBody) {
+    pipeBody.innerHTML = g.stages.map(s => `
+      <tr>
+        <td><strong>${s.stage}</strong></td>
+        <td>${s.count} deals</td>
+        <td style="font-family: var(--font-mono); font-weight: 700; color: var(--primary-light);">₹${s.valueCr} Cr</td>
+      </tr>
+    `).join('');
+  }
+}
+
+// 11. Brand Section
+function renderBrandSection() {
+  const b = appData.brandMarketing;
+  const calBody = document.getElementById('contentCalendarBody');
+  if (calBody) {
+    calBody.innerHTML = b.contentCalendar.map(c => `
+      <tr>
+        <td><strong>${c.date}</strong></td>
+        <td><span class="badge badge-blue">${c.platform}</span></td>
+        <td>${c.topic}</td>
+        <td><span class="badge ${c.status === 'Ready for Approval' ? 'badge-amber' : 'badge-green'}">${c.status}</span></td>
+        <td>${c.owner}</td>
+      </tr>
+    `).join('');
+  }
+}
+
+// 12. Projects Section
+function renderProjectsSection() {
+  const pr = appData.projects;
+  const pBody = document.getElementById('allProjectsBody');
+  if (pBody) {
+    pBody.innerHTML = pr.map(proj => `
+      <tr>
+        <td><strong>${proj.name}</strong></td>
+        <td><span class="prio-badge ${proj.company.toLowerCase().includes('miror') ? 'miror' : 'shetty'}">${proj.company}</span></td>
+        <td>${proj.owner}</td>
+        <td>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="flex: 1; height: 6px; background: var(--bg-surface); border-radius: 4px; overflow: hidden;">
+              <div style="width: ${proj.progress}%; height: 100%; background: var(--primary);"></div>
+            </div>
+            <span>${proj.progress}%</span>
+          </div>
+        </td>
+        <td>${proj.budget}</td>
+        <td><span class="badge ${proj.status === 'In Progress' ? 'badge-blue' : (proj.status === 'Near Completion' ? 'badge-green' : 'badge-red')}">${proj.status}</span></td>
+        <td><span class="badge ${proj.risk === 'Low' ? 'badge-green' : (proj.risk === 'Medium' ? 'badge-amber' : 'badge-red')}">${proj.risk}</span></td>
+      </tr>
+    `).join('');
+  }
+}
+
+// 13. Risks Section
+function renderRisksSection() {
+  const container = document.getElementById('risksListContainer');
+  if (!container) return;
+
+  const risks = [
+    { level: 'Critical', icon: 'fa-circle-xmark', color: 'var(--danger)', title: 'Series A Term Sheet Clause Discrepancy', desc: '15% ESOP dilution vs 12% agreed term with lead investor Peak XV.', action: 'Review and sign compromise today before 4:00 PM' },
+    { level: 'High', icon: 'fa-triangle-exclamation', color: 'var(--warning)', title: 'Omnichannel Retail Launch Delayed by 2 Weeks', desc: 'Apollo packaging barcode compliance requiring reprint of 5,000 unit batch.', action: 'Expedite packaging vendor reprint in Bengaluru' },
+    { level: 'Medium', icon: 'fa-clock', color: 'var(--info)', title: 'Senior Tech Positions Overdue >45 Days', desc: 'Engineering velocity at risk of decelerating without senior backend lead.', action: 'Founder closing interview scheduled for 6:45 PM' }
+  ];
+
+  container.innerHTML = risks.map(r => `
+    <div style="background: var(--bg-card); border-left: 4px solid ${r.color}; border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <strong style="color: var(--text-primary); font-size: 13.5px;"><i class="fa-solid ${r.icon}" style="color: ${r.color}; margin-right: 8px;"></i> ${r.title}</strong>
+        <span class="badge ${r.level === 'Critical' ? 'badge-red' : (r.level === 'High' ? 'badge-amber' : 'badge-blue')}">${r.level}</span>
+      </div>
+      <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">${r.desc}</div>
+      <div style="font-size: 11.5px; color: var(--primary-light); font-weight: 700; margin-top: 6px;"><i class="fa-solid fa-arrow-right"></i> ${r.action}</div>
+    </div>
+  `).join('');
+}
+
+// 14. Relationships Section
+function renderRelationshipsSection() {
+  const r = appData.relationships;
+  const rBody = document.getElementById('relationshipsBody');
+  if (rBody) {
+    rBody.innerHTML = r.map(rel => `
+      <tr>
+        <td><strong>${rel.name}</strong></td>
+        <td>${rel.org}</td>
+        <td><span class="badge badge-blue">${rel.category}</span></td>
+        <td>${rel.lastInteraction}</td>
+        <td><strong style="color: ${rel.nextFollowUp.includes('Overdue') ? 'var(--danger)' : 'var(--text-primary)'};">${rel.nextFollowUp}</strong></td>
+        <td><span class="badge ${rel.status === 'Active Lead' ? 'badge-green' : (rel.status === 'Attention Required' ? 'badge-red' : 'badge-blue')}">${rel.status}</span></td>
+        <td>${rel.notes}</td>
+      </tr>
+    `).join('');
+  }
+}
+
+// 15. Personal Section
+function renderPersonalSection() {
+  const p = appData.founder.personalMetrics;
+  document.getElementById('personalMtgs').textContent = p.meetingHours + ' hrs';
+  document.getElementById('personalDeep').textContent = p.deepWorkHours + ' hrs';
+  document.getElementById('personalStrat').textContent = p.strategicWorkPct + '%';
+  document.getElementById('personalOper').textContent = p.operationalWorkPct + '%';
+}
+
+// 16. Weekly Review
+function renderWeeklyReview() {
+  const w = appData.weeklyReview;
+  document.getElementById('reviewWins').value = w.wins;
+  document.getElementById('reviewChallenges').value = w.challenges;
+  document.getElementById('reviewDecisions').value = w.decisionsMade;
+  document.getElementById('reviewNextPriorities').value = w.nextWeekPriorities;
+}
+
+function saveWeeklyReview() {
+  appData.weeklyReview.wins = document.getElementById('reviewWins').value;
+  appData.weeklyReview.challenges = document.getElementById('reviewChallenges').value;
+  appData.weeklyReview.decisionsMade = document.getElementById('reviewDecisionsMade').value;
+  appData.weeklyReview.nextWeekPriorities = document.getElementById('reviewNextPriorities').value;
+  saveData();
+  alert('Weekly Review changes saved successfully!');
+}
+
+// Initialize All Chart.js Visualizations
+function initCharts() {
+  // Miror Revenue Trend Chart
+  const mirorCtx = document.getElementById('mirorRevenueChart');
+  if (mirorCtx) {
+    const trend = appData.miror.marketing.monthlyTrend;
+    charts.miror = new Chart(mirorCtx.getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: trend.map(t => t.month),
+        datasets: [{
+          label: 'Monthly Revenue (₹ Lakhs)',
+          data: trend.map(t => t.revenue),
+          borderColor: '#ec4899',
+          backgroundColor: 'rgba(236, 72, 153, 0.12)',
+          fill: true,
+          tension: 0.35,
+          borderWidth: 3
+        }]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+  }
+
+  // Financial Trend Chart
+  const finCtx = document.getElementById('financeTrendChart');
+  if (finCtx) {
+    const fin = appData.finance.monthlyTrend;
+    charts.finance = new Chart(finCtx.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: fin.map(f => f.month),
+        datasets: [
+          { label: 'Revenue (₹L)', data: fin.map(f => f.rev), backgroundColor: '#6366f1', borderRadius: 4 },
+          { label: 'Burn (₹L)', data: fin.map(f => f.exp), backgroundColor: '#ef4444', borderRadius: 4 }
+        ]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+  }
+
+  // Founder Time Allocation Doughnut Chart
+  const timeCtx = document.getElementById('founderTimeChart');
+  if (timeCtx) {
+    const alloc = appData.founder.personalMetrics.timeAllocation;
+    charts.time = new Chart(timeCtx.getContext('2d'), {
+      type: 'doughnut',
+      data: {
+        labels: alloc.map(a => a.label),
+        datasets: [{
+          data: alloc.map(a => a.pct),
+          backgroundColor: alloc.map(a => a.color),
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 11 } } } },
+        cutout: '70%'
+      }
+    });
+  }
+}
+
+function rebuildCharts() {
+  Object.values(charts).forEach(c => { if (c) c.destroy(); });
+  initCharts();
+}
+
+function setupEventListeners() {
+  // Keyboard shortcut Ctrl+K / Cmd+K for Quick Search/Action
+  window.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      openAddPriorityModal();
+    }
+  });
+}
+
+</script>
+</body>
+</html>
