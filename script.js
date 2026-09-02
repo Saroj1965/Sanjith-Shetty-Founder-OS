@@ -456,6 +456,27 @@ function delegateDecision(id) {
 // 7. Miror Section
 function renderMirorSection() {
   const m = appData.miror;
+  
+  // Render offerings grid
+  const offeringsContainer = document.getElementById('mirorOfferingsContainer');
+  if (offeringsContainer && m.offerings) {
+    offeringsContainer.innerHTML = m.offerings.map(o => `
+      <div class="card" style="border-top: 3px solid var(--accent-miror); display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+            <span class="badge" style="background: rgba(236, 72, 153, 0.15); color: #ec4899; font-weight: 700;">${o.badge}</span>
+            <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">${o.category}</span>
+          </div>
+          <h4 style="font-size: 14.5px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px;">${o.name}</h4>
+          <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.45;">${o.desc}</p>
+        </div>
+        <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-light); font-size: 11.5px; font-family: var(--font-mono); font-weight: 700; color: var(--primary-light);">
+          <i class="fa-solid fa-chart-simple"></i> ${o.stats}
+        </div>
+      </div>
+    `).join('');
+  }
+
   const f = document.getElementById('mirorFunnelContainer');
   if (f) {
     f.innerHTML = m.funnel.map(stage => `
