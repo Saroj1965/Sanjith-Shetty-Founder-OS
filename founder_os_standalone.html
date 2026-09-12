@@ -18,46 +18,46 @@
   <style>
 /* SANJITH SHETTY - FOUNDER OS - PREMIUM EXECUTIVE STYLESHEET */
 
-:root {
-  /* DARK THEME (DEFAULT) */
-  --bg-app: #090d16;
-  --bg-sidebar: #060911;
-  --bg-header: rgba(9, 13, 22, 0.85);
-  --bg-card: #101726;
-  --bg-card-hover: #151f33;
-  --bg-surface: #182238;
-  --bg-input: #131c2e;
+:root, body.light-theme {
+  /* CLEAN EXECUTIVE LIGHT THEME (DEFAULT) */
+  --bg-app: #f8fafc;
+  --bg-sidebar: #ffffff;
+  --bg-header: rgba(255, 255, 255, 0.95);
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-surface: #f1f5f9;
+  --bg-input: #ffffff;
 
-  --border: #1e293b;
-  --border-light: rgba(255, 255, 255, 0.08);
+  --border: #e2e8f0;
+  --border-light: rgba(0, 0, 0, 0.06);
   --border-highlight: rgba(99, 102, 241, 0.35);
 
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
   --text-muted: #64748b;
   --text-white: #ffffff;
 
-  --primary: #6366f1;
-  --primary-light: #818cf8;
-  --primary-glow: rgba(99, 102, 241, 0.25);
+  --primary: #4f46e5;
+  --primary-light: #6366f1;
+  --primary-glow: rgba(79, 70, 229, 0.15);
 
-  --accent-miror: #ec4899;
-  --accent-miror-glow: rgba(236, 72, 153, 0.25);
-  --accent-gold: #f59e0b;
+  --accent-miror: #db2777;
+  --accent-miror-glow: rgba(219, 39, 119, 0.15);
+  --accent-gold: #d97706;
   
-  --success: #10b981;
-  --success-bg: rgba(16, 185, 129, 0.12);
-  --warning: #f59e0b;
-  --warning-bg: rgba(245, 158, 11, 0.12);
-  --danger: #ef4444;
-  --danger-bg: rgba(239, 68, 68, 0.12);
-  --info: #3b82f6;
-  --info-bg: rgba(59, 130, 246, 0.12);
+  --success: #059669;
+  --success-bg: rgba(5, 150, 105, 0.1);
+  --warning: #d97706;
+  --warning-bg: rgba(217, 119, 6, 0.1);
+  --danger: #dc2626;
+  --danger-bg: rgba(220, 38, 38, 0.1);
+  --info: #2563eb;
+  --info-bg: rgba(37, 99, 235, 0.1);
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-card: 0 4px 14px -1px rgba(0, 0, 0, 0.35), 0 2px 6px -1px rgba(0, 0, 0, 0.2);
-  --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.15);
-  --shadow-premium: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 2px 8px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.08);
+  --shadow-premium: 0 20px 35px -10px rgba(15, 23, 42, 0.1);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -65,30 +65,6 @@
   --radius-full: 9999px;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'Space Grotesk', monospace;
-}
-
-/* LIGHT THEME OVERRIDE */
-body.light-theme {
-  --bg-app: #f4f6fa;
-  --bg-sidebar: #ffffff;
-  --bg-header: rgba(255, 255, 255, 0.9);
-  --bg-card: #ffffff;
-  --bg-card-hover: #f8fafc;
-  --bg-surface: #f1f5f9;
-  --bg-input: #f8fafc;
-
-  --border: #e2e8f0;
-  --border-light: rgba(0, 0, 0, 0.06);
-  --border-highlight: rgba(99, 102, 241, 0.4);
-
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-  --text-white: #ffffff;
-
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-card: 0 4px 12px rgba(15, 23, 42, 0.06);
-  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.08);
 }
 
 /* BASE RESETS */
@@ -220,8 +196,8 @@ body {
 }
 
 .nav-link.active {
-  background: linear-gradient(90deg, rgba(99, 102, 241, 0.18) 0%, rgba(99, 102, 241, 0.05) 100%);
-  color: var(--primary-light);
+  background: rgba(79, 70, 229, 0.08);
+  color: var(--primary);
   border-left: 3px solid var(--primary);
   font-weight: 700;
 }
@@ -526,7 +502,7 @@ body {
   font-family: var(--font-mono);
   font-size: 20px;
   font-weight: 700;
-  color: var(--primary-light);
+  color: var(--primary);
 }
 
 /* VITALS GRID */
@@ -640,9 +616,9 @@ body {
   font-size: 11px;
   font-weight: 700;
 }
-.prio-badge.miror { background: rgba(236, 72, 153, 0.15); color: #f472b6; }
-.prio-badge.shetty { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
-.prio-badge.portfolio { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+.prio-badge.miror { background: rgba(219, 39, 119, 0.12); color: #db2777; }
+.prio-badge.shetty { background: rgba(37, 99, 235, 0.12); color: #2563eb; }
+.prio-badge.portfolio { background: rgba(5, 150, 105, 0.12); color: #059669; }
 
 .prio-importance {
   font-size: 11px;
@@ -926,7 +902,7 @@ body {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(15, 23, 42, 0.45);
   backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
@@ -1147,9 +1123,6 @@ body {
         <span class="pulse-dot"></span>
         <span>Founder Engine Live</span>
       </div>
-      <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Theme">
-        <i id="themeToggleIcon" class="fa-solid fa-sun"></i>
-      </button>
     </div>
   </aside>
 
@@ -2333,27 +2306,17 @@ function saveData() {
   localStorage.setItem('SANJITH_FOUNDER_OS_DATA', JSON.stringify(appData));
 }
 
-// Theme handling
+// Theme handling - Executive Light Theme
 function initTheme() {
-  const savedTheme = localStorage.getItem('FOUNDER_OS_THEME') || 'dark';
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-theme');
-    updateThemeIcon(true);
-  }
+  localStorage.setItem('FOUNDER_OS_THEME', 'light');
+  document.body.classList.remove('dark-theme');
+  document.body.classList.add('light-theme');
 }
 
 function toggleTheme() {
-  const isLight = document.body.classList.toggle('light-theme');
-  localStorage.setItem('FOUNDER_OS_THEME', isLight ? 'light' : 'dark');
-  updateThemeIcon(isLight);
+  localStorage.setItem('FOUNDER_OS_THEME', 'light');
+  document.body.classList.add('light-theme');
   rebuildCharts();
-}
-
-function updateThemeIcon(isLight) {
-  const icon = document.getElementById('themeToggleIcon');
-  if (icon) {
-    icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
-  }
 }
 
 // Navigation

@@ -31,26 +31,25 @@ function saveData() {
   localStorage.setItem('SANJITH_FOUNDER_OS_DATA', JSON.stringify(appData));
 }
 
-// Theme handling
+// Theme handling - Executive Light Theme
 function initTheme() {
-  const savedTheme = localStorage.getItem('FOUNDER_OS_THEME') || 'dark';
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-theme');
-    updateThemeIcon(true);
-  }
+  localStorage.setItem('FOUNDER_OS_THEME', 'light');
+  document.body.classList.remove('dark-theme');
+  document.body.classList.add('light-theme');
+  updateThemeIcon(true);
 }
 
 function toggleTheme() {
-  const isLight = document.body.classList.toggle('light-theme');
-  localStorage.setItem('FOUNDER_OS_THEME', isLight ? 'light' : 'dark');
-  updateThemeIcon(isLight);
+  localStorage.setItem('FOUNDER_OS_THEME', 'light');
+  document.body.classList.add('light-theme');
+  updateThemeIcon(true);
   rebuildCharts();
 }
 
 function updateThemeIcon(isLight) {
   const icon = document.getElementById('themeToggleIcon');
   if (icon) {
-    icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+    icon.className = 'fa-solid fa-sun';
   }
 }
 
